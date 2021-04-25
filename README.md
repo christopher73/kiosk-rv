@@ -52,3 +52,6 @@ Storage Temperature: -20 degree C to 60 degree C / -4 degree F to 140 degree F
 Humidity
 Operating: 20% to 80%
 Storage: 10% to 95%
+
+//
+https://jonathanmh.com/raspberry-pi-4-kiosk-wall-display-dashboard/

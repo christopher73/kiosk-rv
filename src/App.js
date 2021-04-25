@@ -1,5 +1,12 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { WelcomeScreen } from "./screens";
+import {
+  MedicareQuestionScreen,
+  AgeQuestionScreen,
+  MedicaidQuestionScreen,
+  VideoCallScreen,
+  WelcomeScreen,
+} from "./screens";
 
 function App() {
   /**
@@ -20,9 +27,23 @@ function App() {
   }
   console.log(formatValue("123456789"));
   return (
-    <div>
-      <WelcomeScreen />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={WelcomeScreen} />
+        <Route exact path="/age-question" component={AgeQuestionScreen} />
+        <Route
+          exact
+          path="/medicare-question"
+          component={MedicareQuestionScreen}
+        />
+        <Route
+          exact
+          path="/medicaid-question"
+          component={MedicaidQuestionScreen}
+        />
+        <Route exact path="/video-call" component={VideoCallScreen} />
+      </Switch>
+    </Router>
   );
 }
 

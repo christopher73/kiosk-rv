@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { CarouselComponent } from "../../components";
 import Logo from "./assets/nccg_logo.png";
 import UsaLogo from "./assets/usa.png";
 import SpainLogo from "./assets/spain.png";
 import ChinaLogo from "./assets/china.png";
+import { useHistory } from "react-router-dom";
 
 import "./assets/style.css";
 export const WelcomeScreen = () => {
-  const handleBackgroundPress = (event) => {
-    console.log("Background press");
-  };
+  const history = useHistory();
+  const handleBackgroundPress = useCallback(
+    () => history.push("/medicare-question"),
+    [history]
+  );
+
   const handleLanguageButton = (event) => {
     event.stopPropagation(); //The stopPropagation() method of the Event interface prevents further propagation of the current event in the capturing and bubbling phases. It does not, however, prevent any default behaviors from occurring; for instance, clicks on links are still processed. If you want to stop those behaviors, see the preventDefault() method.
     console.log("Button press");
@@ -39,7 +43,7 @@ export const WelcomeScreen = () => {
           }}
           id="english-button"
         >
-          <img src={UsaLogo} alt="usa_flag" className="language-flag-button" />
+          <img src={UsaLogo} alt="usa_flag" className="language-flag-image" />
           <p className="language-button-text">English</p>
         </div>
         <div
@@ -51,7 +55,7 @@ export const WelcomeScreen = () => {
           <img
             src={SpainLogo}
             alt="spain_flag"
-            className="language-flag-button"
+            className="language-flag-image"
           />
           <p className="language-button-text">Español</p>
         </div>
@@ -64,7 +68,7 @@ export const WelcomeScreen = () => {
           <img
             src={ChinaLogo}
             alt="china_flag"
-            className="language-flag-button"
+            className="language-flag-image"
           />
           <p className="language-button-text">中国人</p>
         </div>

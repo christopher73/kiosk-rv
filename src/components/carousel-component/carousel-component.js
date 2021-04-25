@@ -20,13 +20,13 @@ export const CarouselComponent = () => {
   return (
     <div className="welcome-background">
       <Slider {...settings}>
-        <div style={{ backgroundColor: "red" }}>
+        <div className="background">
           <img className="carousel-img" src={Img1} alt="Img1" />
         </div>
-        <div>
+        <div className="background">
           <img className="carousel-img" src={Img2} alt="Img2" />
         </div>
-        <div>
+        <div className="background">
           <img className="carousel-img" src={Img3} alt="Img3" />
         </div>
       </Slider>
